@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.all-infor {
+  display: flex;
+  justify-content: space-between;
+}
+.shop {
+  width: 100%;
+}
+h1{
+    text-align: center;
+}
+.shop-body{
+    height: 300px;
+    overflow-y: scroll;
+}
+.shop-control{
+    background-color: aqua;
+    width: 300px;
+    height: 100%;
+}
+.form input,
+.form-modal input{
+    width: 100%;
+}
+.form, 
+.form-modal{
+    padding: 10px;
+}
+button:hover,
+.save-modal:hover{
+    background-color: bisque;
+}
+#slShop{
+    width: 50px;
+}
+.search{
+    display: flex;
+    justify-content: center;
+}
+th{
+    padding: 0 15px 0 15px;
+}
+.form div,
+.form-modal div{
+    margin-bottom: 10px;
+}
+.error{
+    color: red;
+}
+.no-data{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#product-store img{
+    height: 200px;
+}
+.modal-header h2{
+    margin-left: 75px !important;
+}
+.stt-modal,
+.code-modal{
+    color: cornflowerblue;
+}

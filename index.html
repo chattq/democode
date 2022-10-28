@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!--  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="./dom.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body onload="render()">
+    <div class="all-infor">
+      <div class="shop">
+        <div class="shop-main">
+          <h1>Cửa Hàng</h1>
+          <div class="search">
+            <input
+              type="text"
+              name=""
+              id="myInput"
+              placeholder="Tìm Kiếm Sản Phẩm"
+            />
+          </div>
+          <div class="shop-body">
+            <table id="product_shop" class="table">
+              <thead>
+                <!-- <tr>
+                  <th scope="col">STT</th>
+                  <th scope="col">Mã Sản Phẩm</th>
+                  <th scope="col">Tên Sản Phẩm</th>
+                  <th scope="col">Giá Sản Phẩm</th>
+                  <th scope="col">Số Lượng Mua</th>
+                  <th scope="col">Số Lượng Trong Kho</th>
+                  <th scope="col">Hạn Sử Dụng</th>
+                  <th scope="col">Action</th>
+                </tr> -->
+              </thead>
+              <tbody class="Product">
+                <!-- <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>
+                    <input
+                      type="number"
+                      min="1"
+                      name=""
+                      id="slShop"
+                      placeholder="1"
+                    />
+                  </td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>
+                    <button class="buy">Mua</button>
+                    <button class="add-cart">Thêm Vào Giỏ Hàng</button>
+                    <button class="delete">Xóa Sản Phẩm</button>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="store">
+          <h1>Kho</h1>
+          <div class="search">
+            <input
+              type="text"
+              name=""
+              id="search"
+              placeholder="Tìm Kiếm Sản Phẩm"
+            />
+          </div>
+          <table id="table-product" class="table table-product"></table>
+        </div>
+      </div>
+      <div class="shop-control">
+        <div class="form">
+          <div>
+            <label for="">Mã Sản Phẩm:</label> <br />
+            <input type="text" name="" id="product-code" />
+            <span id="code-error" class="error"></span>
+          </div>
+          <div>
+            <label for="">Tên Sản Phẩm:</label> <br />
+            <input type="text" name="" id="product-name" />
+            <span id="name-error" class="error"></span>
+          </div>
+          <div>
+            <label for="">Giá Sản Phẩm:</label> <br />
+            <input type="number" min="0" name="" id="product-price" />
+            <span id="price-error" class="error"></span>
+          </div>
+          <div>
+            <label for="">Ngày Nhập Hàng:</label> <br />
+            <input type="date" name="begin" id="product-date" />
+            <span id="date-error" class="error"></span>
+          </div>
+          <div>
+            <label for="">Hạn Sử Dụng:</label> <br />
+            <input type="date" name="begin" id="product-expiry" />
+            <span id="expiry-error" class="error"></span>
+          </div>
+          <div>
+            <label for="">Số Sản Phẩm Nhập Vào:</label> <br />
+            <input type="number" min="0" name="" id="product-number" />
+            <span id="number-error" class="error"></span>
+          </div>
+          <div class="btn">
+            <button class="add">Thêm</button>
+            <button class="update">Cập nhật Cửa Hàng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content" id="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="exampleModalLabel">Mã Sản Phẩm: <span class="code-modal">Thông Tin Sản Phẩm</span></h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-modal">
+              <div>
+                <label for="">Mã Sản Phẩm:</label> <br />
+                <input type="text" name="" id="product-code-modal" />
+                <span id="code-error" class="error"></span>
+              </div>
+              <div>
+                <label for="">Tên Sản Phẩm:</label> <br />
+                <input type="text" name="" id="product-name-modal" />
+                <span id="name-error" class="error"></span>
+              </div>
+              <div>
+                <label for="">Giá Sản Phẩm:</label> <br />
+                <input type="number" min="0" name="" id="product-price-modal" />
+                <span id="price-error" class="error"></span>
+              </div>
+              <div>
+                <label for="">Ngày Nhập Hàng:</label> <br />
+                <input type="date" name="begin" id="product-date-modal" />
+                <span id="date-error" class="error"></span>
+              </div>
+              <div>
+                <label for="">Hạn Sử Dụng:</label> <br />
+                <input type="date" name="begin" id="product-expiry-modal" />
+                <span id="expiry-error" class="error"></span>
+              </div>
+              <div>
+                <label for="">Số Sản Phẩm Nhập Vào:</label> <br />
+                <input type="number" min="0" name="" id="product-number-modal" />
+                <span id="number-error" class="error"></span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn save-modal btn-primary">Lưu thông tin</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
